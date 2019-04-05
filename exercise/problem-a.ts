@@ -3,6 +3,19 @@
 
 function hasPairSumToK(a: number[], k: number): boolean {
     
+    let map = new Map();
+   
+    let index;
+    
+    for (index=0; index<a.length; index++) {
+        let wanted = k - a[index];
+        if (map.has(wanted)){
+            return true;
+        } else {
+           map.set(a[index],index);
+        }
+    }
+    return false;
 }
 
 
